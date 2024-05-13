@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams Tab App</title>
+    <script>
+        async function sendRequest() {
+            const input = document.getElementById('inputWord').value;
+            const response = await fetch(`http://your-fastapi-url.com/endpoint?query=${input}`);
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result);
+        }
+    </script>
+</head>
+<body>
+    <h1>Teams Tab App</h1>
+    <input type="text" id="inputWord" placeholder="Enter a word">
+    <button onclick="sendRequest()">Send</button>
+    <p id="result"></p>
+</body>
+</html>
